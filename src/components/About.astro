@@ -1,17 +1,133 @@
-<section>
-  <h2>Sobre mí</h2>
-  <p>
-    Soy un desarrollador multiplataforma con pasión por crear soluciones
-    eficientes y bonitas. Me gusta aprender tecnologías nuevas y compartir mis
-    proyectos.
-  </p>
+<section class="about-section">
+  <div class="about-overlay">
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <h3>Hola! soy <span class="highlight">Nil Díaz</span></h3>
+      <p><span id="typewriter"></span><span class="cursor"></span></p>
+      <p>
+        Soy un desarrollador multiplataforma con pasión por crear soluciones
+        eficientes y bonitas. Me gusta aprender tecnologías nuevas y compartir
+        mis proyectos.
+      </p>
+    </div>
+  </div>
 </section>
 
 <style>
-  section {
-    margin-bottom: 2rem;
+  .about-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    padding: 4rem 1rem;
+    color: white;
+    font-family: "Fira Code", monospace;
+    z-index: 0;
   }
-  h2 {
-    color: #222;
+
+  .about-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/aboutme.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+    transform: scale(1.05); /* per evitar cantonades desenfocades */
+  }
+
+  .about-overlay {
+    background: transparent;
+    border-radius: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    animation: fadeIn 1.2s ease-out forwards;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  .about-text h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .about-text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .highlight {
+    color: #b4ff39;
+  }
+
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  #typewriter {
+    font-family: "Fira Code", monospace;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid yellowgreen;
+    padding-right: 4px;
+    animation: blink 0.7s step-end infinite;
+    color: white;
+    min-height: 1.5em; /* 👈 esto fija una altura mínima */
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  @keyframes fadeIn {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-overlay {
+      padding: 2rem;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+    }
   }
 </style>
+<script>
+  const text = "Desarrollo de Aplicaciones Multiplataforma";
+  const element = document.getElementById("typewriter");
+  let i = 0;
+  let deleting = false;
+
+  function type() {
+    if (!deleting) {
+      element.textContent = text.slice(0, i++);
+      if (i > text.length) {
+        deleting = true;
+        setTimeout(type, 2000); // espera antes de borrar
+        return;
+      }
+    } else {
+      element.textContent = text.slice(0, --i);
+      if (i === 0) {
+        deleting = false;
+      }
+    }
+    setTimeout(type, deleting ? 50 : 100); // velocidad de escritura/borrado
+  }
+
+  type();
+</script>

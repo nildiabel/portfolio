@@ -2,8 +2,9 @@
 import Nav from "../components/Nav.astro";
 import About from "../components/About.astro";
 import Contact from "../components/Contact.astro";
-import Projects from "../components/Projects.astro";
+import Project from "../components/Project.astro";
 import Footer from "../components/Footer.astro";
+import UsedTech from "../components/UsedTech.astro";
 ---
 
 <html lang="es">
@@ -32,13 +33,8 @@ import Footer from "../components/Footer.astro";
       }
 
       main {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 1rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        padding: 2rem;
         margin-top: 3rem;
-        backdrop-filter: blur(10px);
       }
 
       h1 {
@@ -58,12 +54,9 @@ import Footer from "../components/Footer.astro";
     <div class="container">
       <Nav activePage="home" />
       <main>
-        <h1>Bienvenido a mi Portfolio</h1>
-        <p>
-          Aquí encontrarás información sobre mí, mis proyectos y cómo
-          contactarme. Navega por las secciones para conocer más.
-        </p>
         <About />
+        <Project />
+        <UsedTech />
       </main>
       <Footer />
     </div>

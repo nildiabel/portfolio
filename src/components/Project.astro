@@ -1,0 +1,164 @@
+<h1>Proyecto reciente...</h1>
+<div class="projects-grid">
+  <!-- Proyecto 1 -->
+  <div class="project-card">
+    <div class="project-content">
+      <h2 class="project-title">Proyecto d'Indcidencias</h2>
+      <p class="project-date">Febrero 15, 2024 – Ahora</p>
+      <p class="project-description">
+        Plataforma para registrar y gestionar incidencias de forma eficiente.
+        Visualiza, consulta y resuelve en pocos clics.
+      </p>
+      <img
+        src="/public/incidencies.png"
+        alt="Incidències"
+        class="project-img"
+      />
+
+      <div class="tech-stack">
+        <span class="tech">
+          <img src="/public/icons/Node.js.svg" alt="Node.js" />
+          Node.js
+        </span>
+        <span class="tech">
+          <img src="/public/icons/Bootstrap.svg" alt="Bootstrap" />
+          Bootstrap
+        </span>
+        <span class="tech">
+          <img src="/public/icons/Express.svg" alt="Express" />
+          Express
+        </span>
+        <span class="tech">
+          <img src="/public/icons/HTML5.svg" alt="HTML" />
+          HTML
+        </span>
+        <span class="tech">
+          <img src="/public/icons/JavaScript.svg" alt="JavaScript" />
+          JavaScript
+        </span>
+        <span class="tech">
+          <img src="/public/icons/NPM.svg" alt="NPM" />
+          NPM
+        </span>
+        <span class="tech">
+          <img src="/public/icons/MongoDB.svg" alt="MongoDB" />
+          MongoDB
+        </span>
+      </div>
+
+      <a
+        href="http://a24nildiabel.dam.inspedralbes.cat/valorant/"
+        target="_blank"
+        class="visit-btn"
+      >
+        Visitar sitio
+      </a>
+    </div>
+  </div>
+</div>
+<style>
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+
+  p {
+    color: #ccc;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #333;
+  }
+
+  .project-content {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech {
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .visit-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+
+  .visit-btn:hover {
+    background-color: #1d4ed8;
+  }
+
+  .tech {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #2d2d2d;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .tech img {
+    width: 20px;
+    height: 20px;
+  }
+</style>

@@ -1,10 +1,12 @@
 ---
 import Nav from "../components/Nav.astro";
-import About from "../components/About.astro";
+import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Project from "../components/Project.astro";
 import Footer from "../components/Footer.astro";
 import UsedTech from "../components/UsedTech.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Study from "../components/Study.astro";
 ---
 
 <html lang="es">
@@ -48,13 +50,35 @@ import UsedTech from "../components/UsedTech.astro";
         line-height: 1.6;
         color: #ccc;
       }
+      .about-study-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .aboutme-wrapper,
+      .study-wrapper {
+        flex: 1 1 48%;
+        box-sizing: border-box;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <Nav activePage="home" />
       <main>
-        <About />
+        <Intro />
+        <div class="about-study-row">
+          <div class="aboutme-wrapper">
+            <AboutMe />
+          </div>
+          <div class="study-wrapper">
+            <Study />
+          </div>
+        </div>
+
         <Project />
         <UsedTech />
       </main>
